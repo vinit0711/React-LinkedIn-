@@ -20,6 +20,7 @@
   color: grey;
   padding-left: 15px;
   width: 100%;
+  background-color: white;
 }
 
 .feed__input > form {
@@ -33,6 +34,9 @@
   margin-left: 10px;
   outline-width: 0;
   font-weight: 600;
+  outline: none;
+  border: none;
+  background: none;
 }
 
 .feed__inputOptions {
