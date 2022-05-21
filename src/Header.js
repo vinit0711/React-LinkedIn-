@@ -11,8 +11,18 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';
 import HeaderOption from './HeaderOption';
 import avatar from './avatar.png'
+import { useDispatch } from 'react-redux';
+import { auth } from './firebase';
+import { logout } from "./features/userSlice"
 
 function Header() {
+    const dispatch = useDispatch(
+    );
+    const LogoutOfApp = () => {
+        console.log("logging actrion done");
+        dispatch(logout())
+        auth.signOut();
+    }
     return (
         <div className="header">
             <div className="header__left">
@@ -30,7 +40,7 @@ function Header() {
                 <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
                 <HeaderOption Icon={ChatIcon} title="Messaging" />
                 <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-                <HeaderOption avatar={avatar} title="Me" />
+                <HeaderOption avatar={avatar} title="Me" onClick={LogoutOfApp} />
 
             </div>
         </div>
